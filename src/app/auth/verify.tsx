@@ -28,6 +28,7 @@ export default function VerifyPage() {
             console.error('Verification error:', error.message);
             alert('Verification failed: ' + error.message);
             router.push('/auth');
+            console.log(data);//WTF?????
           } else {
             alert('Email verified successfully! Redirecting to profile setup...');
             router.push('/auth/profile');
