@@ -15,12 +15,12 @@ export default function VerifyPage() {
     const verify = async () => {
       const urlParams = new URLSearchParams(window.location.search);
       const token_hash = urlParams.get('token_hash');
-      const type = urlParams.get('type') || 'email'; // Default to 'email' for confirmation links
+      const type = urlParams.get('type') || 'email';
 
       if (token_hash) {
         try {
           const { data, error } = await supabase.auth.verifyOtp({
-            type: type as 'email' | 'recovery' | 'invite' | 'email_change', // Valid types for email
+            type: type as 'email' | 'recovery' | 'invite' | 'email_change',
             token_hash,
           });
 
